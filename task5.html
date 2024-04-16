@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to find the largest number among three numbers
+function findLargestNumber(num1, num2, num3) {
+    let largest = num1; // Assume num1 is the largest initially
+
+    // Check if num2 is larger than the current largest
+    if (num2 > largest) {
+        largest = num2;
+    }
+
+    // Check if num3 is larger than the current largest
+    if (num3 > largest) {
+        largest = num3;
+    }
+
+    return largest;
+}
+
+// Prompt the user to enter three numbers
+let num1 = parseFloat(prompt("Enter the first number:"));
+let num2 = parseFloat(prompt("Enter the second number:"));
+let num3 = parseFloat(prompt("Enter the third number:"));
+
+// Check if the inputs are valid numbers
+if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+    console.log("Please enter valid numbers.");
+} else {
+    // Find the largest number among the three
+    let largestNumber = findLargestNumber(num1, num2, num3);
+    console.log("The largest number is: " + largestNumber);
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to print stars
+function printStars(rows) {
+    for (let i = 1; i <= rows; i++) {
+        let stars = '';
+        for (let j = 1; j <= i; j++) {
+            stars += '*';
+        }
+        console.log(stars);
+    }
+}
+
+// Prompt the user to input the number of rows
+let rows = parseInt(prompt("Enter the number of rows:"));
+
+// Check if the input is a valid number
+if (isNaN(rows) || rows <= 0) {
+    console.log("Please enter a valid number of rows greater than 0.");
+} else {
+    // Print stars
+    printStars(rows);
+}
+
+    </script>
+</body>
+</html>

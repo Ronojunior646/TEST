@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Array of products with their details including stock
+let prods = [['omo','30kshs','300'], ['milk','50kshs','200'],['bread','45kshs','359'], ['coffee','5kshs','79']];
+
+// Function to calculate total stock
+function calculateTotalStock(products) {
+    let totalStock = 0;
+    for (let i = 0; i < products.length; i++) {
+        // Extract the last character of the third element in each sub-array (stock)
+        let stock = parseInt(products[i][2].slice(-1));
+        totalStock += stock;
+    }
+    return totalStock;
+}
+
+let totalStock = calculateTotalStock(prods);
+console.log("Total stock in the company: " + totalStock);
+
+    </script>
+</body>
+</html>

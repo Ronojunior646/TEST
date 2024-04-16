@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to validate and format the phone number
+function formatPhoneNumber(phoneNumber) {
+    // Remove any non-digit characters
+    phoneNumber = phoneNumber.replace(/\D/g, '');
+
+    // Check if the number starts with 07.. or 71.. or 254.. or 01..
+    if (phoneNumber.startsWith('254')) {
+        // If it starts with 254, add a '+' at the beginning
+        phoneNumber = '+' + phoneNumber;
+    } else if (phoneNumber.startsWith('01')) {
+        // If it starts with 01, replace '01' with '+254'
+        phoneNumber = '+254' + phoneNumber.slice(2);
+    } else if (phoneNumber.startsWith('07') || phoneNumber.startsWith('71')) {
+        // If it starts with 07 or 71, insert '+254' after the first digit
+        phoneNumber = '+254' + phoneNumber.slice(1);
+    } else {
+        // If the number doesn't match any of the specified formats, it's invalid
+        return null;
+    }
+
+    return phoneNumber;
+}
+
+// Prompt the user to enter a phone number
+let phoneNumber = prompt("Enter your phone number:");
+
+// Validate and format the phone number
+let formattedPhoneNumber = formatPhoneNumber(phoneNumber);
+
+// Check if the phone number is valid
+if (formattedPhoneNumber !== null) {
+    console.log("Formatted phone number: " + formattedPhoneNumber);
+} else {
+    console.log("Invalid phone number. Please enter a valid number starting with +254, 07, 71, 254, or 01.");
+}
+
+    </script>
+</body>
+</html>

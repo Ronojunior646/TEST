@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="task.js"></script>
+    <script>
+        // Function to calculate the area of a triangle
+function calculateTriangleArea(base, height) {
+    return 0.5 * base * height;
+}
+
+// Prompt the user to enter the base and height of the triangle
+let base = parseFloat(prompt("Enter the base of the triangle:"));
+let height = parseFloat(prompt("Enter the height of the triangle:"));
+
+// Check if the inputs are valid numbers
+if (isNaN(base) || isNaN(height)) {
+    console.log("Please enter valid numbers for the base and height.");
+} else {
+    // Calculate the area of the triangle
+    let area = calculateTriangleArea(base, height);
+    console.log("The area of the triangle is: " + area);
+}
+
+    </script>
+</body>
+</html>

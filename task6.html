@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to check the password
+function checkPassword() {
+    const correctPassword = "admin@123";
+    let attempts = 4;
+
+    while (attempts > 0) {
+        let password = prompt("Enter the password:");
+
+        if (password === correctPassword) {
+            console.log("Access granted!");
+            return;
+        } else {
+            attempts--;
+            console.log(`Incorrect password. ${attempts} attempts remaining.`);
+        }
+    }
+
+    console.log("Account blocked. Too many incorrect attempts.");
+}
+
+// Call the function to check the password
+checkPassword();
+
+    </script>
+</body>
+</html>
